@@ -1,0 +1,20 @@
+Reactorcore Art (RC Art)
+==
+PACK: Motocross Bike
+
+--
+
+Pixel-art sprites pack depicting a modular motocross bike for physics-driven Trials/Elastomania style games. Multiple wheels and connectors to choose from, as well as different color bodies.
+
+--
+
+Drawn with a '32 pixels per meter' scale. Rough estimate, no meticulous accuracy.
+
+--
+
+CC0, you can use these assets however you want, including commercial projects.
+
+--
+
+You can use Alferd Spritesheet Unpacker to quickly split the large atlas image into individual sprites.
+https://github.com/ForkandBeard/Alferd-Spritesheet-Unpacker
