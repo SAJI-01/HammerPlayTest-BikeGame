@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform target;
-    public float followSpeed = 5f;
+    private Transform target;
+    [SerializeField] private float followSpeed = 5f;
 
     [Header("Zoom Settings")]
     [SerializeField] private float minOrthographicSize = 5f;
@@ -18,31 +18,23 @@ public class CameraController : MonoBehaviour
 
     private Camera cam;
 
-    private void Awake()
+    private void Start()
     {
         cam = Camera.main;
+        target = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
     private void LateUpdate()
     {
         if (!target) return;
 
-        // Follow player smoothly
         Vector3 desiredPos = new Vector3(target.position.x, target.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, desiredPos, followSpeed * Time.deltaTime);
-
-        // Raycast down to check distance from ground
         RaycastHit2D hit = Physics2D.Raycast(target.position, Vector2.down, raycastDistance, groundLayer);
         float distanceToGround = hit.collider ? hit.distance : maxGroundDistance;
-
-        // Map distance to zoom range
         float t = Mathf.InverseLerp(0, maxGroundDistance, distanceToGround);
         float targetZoom = Mathf.Lerp(minOrthographicSize, maxOrthographicSize, t);
-
-        // Smooth zoom
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetZoom, zoomLerpSpeed * Time.deltaTime);
-        
-        //increase and decrease background based on orthographic size
         if (skyBackground != null )
         {
             skyBackground.transform.localScale = Vector3.one * (1 + (cam.orthographicSize - minOrthographicSize) / (maxOrthographicSize - minOrthographicSize));

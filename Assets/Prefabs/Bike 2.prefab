@@ -105,11 +105,11 @@ GameObject:
   - component: {fileID: 4977043235518981382}
   m_Layer: 0
   m_Name: Bike 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2502145951231582418
 Transform:
   m_ObjectHideFlags: 0
@@ -285,22 +285,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44255b63102db384ab5b2760895785d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorTorque: 300
-  tiltForce: 70324
-  onAirTiltForce: 1000
-  brakeForce: 500
-  wheelieForce: 800
-  wheelieTorque: 2000
-  angularVelocityAmount: 220
+  bikeData:
+    name: RedBike
+    isUnlocked: 0
+    isSelected: 0
+    price: 30
+  physicsSettings:
+    motorTorque: 300
+    tiltForce: 65000
+    airTiltForce: 65000
+    brakeForce: 2000
+    wheelieForce: 800
+    wheelieTorque: 500
+    maxAngularVelocity: 150
+    groundLayer:
+      serializedVersion: 2
+      m_Bits: 64
+    groundCheckRadius: 0.2
   backWheelJoint: {fileID: 4977043235518981382}
   frontWheel: {fileID: 4583695851218039288}
   backWheel: {fileID: 5967796268751225627}
   bikeBody: {fileID: 1184819995413861005}
   groundCheck: {fileID: 2547763877021286292}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  groundCheckRadius: 0.2
 --- !u!235 &3344215334777707866
 WheelJoint2D:
   m_ObjectHideFlags: 0

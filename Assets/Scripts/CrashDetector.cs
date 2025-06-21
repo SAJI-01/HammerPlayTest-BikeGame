@@ -9,7 +9,9 @@ public class CrashDetector : MonoBehaviour
         float zRot = transform.rotation.eulerAngles.z;
         if (zRot > angleThreshold && zRot < 360 - angleThreshold)
         {
-            FindObjectOfType<LevelManager>().RestartLevel();
+            // Trigger crash logic here
+            Debug.Log("Crash detected! Bike is upside down.");
+            // You can add more logic here, like resetting the bike position or playing a sound.
         }
     }
 }
