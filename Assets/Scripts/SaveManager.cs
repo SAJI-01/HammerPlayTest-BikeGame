@@ -18,13 +18,6 @@ public static class SaveManager
     {
         Coins += amount;
     }
-
-    public static void UnlockBike2()
-    {
-        if (Coins >= 30 && !IsBike2Unlocked)
-        {
-            Coins -= 30;
-            IsBike2Unlocked = true;
-        }
-    }
+    
+    
 }

@@ -427,6 +427,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &844778164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 844778166}
+  - component: {fileID: 844778165}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &844778165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844778164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563da8b580780fb4dbf57d8f4f9064db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &844778166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844778164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.37, y: 1.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &894588965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1300,57 @@ PolygonCollider2D:
       - {x: 1.6075597, y: -7.420165}
       - {x: -4.8140187, y: -7.390155}
   m_UseDelaunayMesh: 0
+--- !u!1 &1931734209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931734211}
+  - component: {fileID: 1931734210}
+  m_Layer: 0
+  m_Name: Level Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1931734210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931734209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f12b1c7e7494ecc92d6ff0c3ae33f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevelCoins: 10
+  currentLevelTime: 30
+--- !u!4 &1931734211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931734209}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5637627, y: -1.3975271, z: -0.07989055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2242623651717853915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1079495948910247368, guid: cb5de507c66b009409807dd570cdf05c, type: 3}
+  m_PrefabInstance: {fileID: 3337997312363771838}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3337997312363771838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1335,15 +1430,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1079495948910247368, guid: cb5de507c66b009409807dd570cdf05c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6519979946046704749}
   m_SourcePrefab: {fileID: 100100000, guid: cb5de507c66b009409807dd570cdf05c, type: 3}
+--- !u!114 &6519979946046704749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242623651717853915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f259b77a27f54c64afe89e07c68920d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleThreshold: 130
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 407813998}
   - {fileID: 3337997312363771838}
   - {fileID: 1645669224}
   - {fileID: 1212372901}
-  - {fileID: 407813998}
+  - {fileID: 844778166}
+  - {fileID: 1931734211}

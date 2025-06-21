@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 6599509754462740729}
   - component: {fileID: 606334242528588976}
   - component: {fileID: 2249466813764411601}
+  - component: {fileID: 24417673923018586}
   m_Layer: 0
   m_Name: Bike 1
   m_TagString: Untagged
@@ -383,6 +384,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44255b63102db384ab5b2760895785d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bikeInfo:
+    bikeName: BlueRanger
+    isUnlocked: 1
+    price: 0
   motorTorque: 200
   tiltForce: 70324
   onAirTiltForce: 1200
@@ -449,6 +454,19 @@ WheelJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
+--- !u!114 &24417673923018586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552613592875043335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f259b77a27f54c64afe89e07c68920d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleThreshold: 130
 --- !u!1 &6347868334887505376
 GameObject:
   m_ObjectHideFlags: 0

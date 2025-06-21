@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Text coinText;
+    public LevelManager levelManager;
 
     private void Start()
     {
@@ -20,5 +21,13 @@ public class UIManager : MonoBehaviour
     public void RestartLevel()
     {
         FindObjectOfType<LevelManager>().RestartLevel();
+    }
+
+    public void LevelEndReached()
+    {
+        Debug.Log("You Win!");
+        SaveManager.AddCoins(levelManager.currentLevelCoins);
+        
+        
     }
 }

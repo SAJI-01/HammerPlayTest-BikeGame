@@ -1,7 +1,22 @@
+using System;
 using UnityEngine;
 
+[System.Serializable]
+public struct BikeInfo
+{
+    public string bikeName;
+    public bool isUnlocked;
+    public int price;
+}
 public class BikeController : MonoBehaviour
 {
+    [Header("Bike Info")]
+    public BikeInfo bikeInfo;
+    public BikeInfo BikeInfo => bikeInfo;
+    public bool IsUnlocked => bikeInfo.isUnlocked;
+    public int Price => bikeInfo.price;
+    public string BikeName => bikeInfo.bikeName;
+    
     [Header("Bike Settings")]
     [SerializeField] private float motorTorque = 1500f;
     [SerializeField] private float tiltForce = 1000f;
@@ -26,6 +41,7 @@ public class BikeController : MonoBehaviour
     private bool isGrounded;
     private float brakeInput;
     private float steerInput;
+    
 
     private void Update()
     {
