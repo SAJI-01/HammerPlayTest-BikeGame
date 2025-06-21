@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class CrashDetector : MonoBehaviour
 {
-    public float angleThreshold = 80f;
-
+    [SerializeField] private float angleThreshold = 80f;
+    [SerializeField] private ParticleSystem crashEffect;
+    [SerializeField] private GameObject frontWheel,backWheel;
+    
+ 
     void Update()
     {
         float zRot = transform.rotation.eulerAngles.z;
@@ -11,7 +14,7 @@ public class CrashDetector : MonoBehaviour
         {
             // Trigger crash logic here
             Debug.Log("Crash detected! Bike is upside down.");
-            // You can add more logic here, like resetting the bike position or playing a sound.
+            
         }
     }
 }
