@@ -1,5 +1,9 @@
 # HammerPlayTest-BikeGame
 
+Game Engine used : Unity 
+Version : Unity 6 (6000.0.23f1)
+Date : 22/06/2025
+
 Controls:
 - A & D - Tilt Bike
 - W - Accelaration
