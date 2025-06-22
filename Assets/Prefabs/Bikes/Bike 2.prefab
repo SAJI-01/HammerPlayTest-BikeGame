@@ -290,8 +290,6 @@ MonoBehaviour:
   explosionEffect: {fileID: 1345281873240594494}
   bikeData:
     name: RedBike
-    isUnlocked: 0
-    isSelected: 0
     price: 30
   physicsSettings:
     motorTorque: 300

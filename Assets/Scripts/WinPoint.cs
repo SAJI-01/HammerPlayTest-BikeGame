@@ -57,7 +57,7 @@ public class WinPoint : MonoBehaviour
     private void ShowWinUI(float completionTime)
     {
         winPointCanvas.SetActive(true);
-        nextLevelButton.gameObject.SetActive(true);
+        nextLevelButton?.gameObject.SetActive(true);
         completedTimeText.text = $"Completed in: {completionTime:F2} seconds";
         wonCoinsText.text = $"Coins Won: {coinsWon}";
         saveSystem.AddCoins(coinsWon);

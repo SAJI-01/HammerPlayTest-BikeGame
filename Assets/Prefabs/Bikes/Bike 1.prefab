@@ -487,8 +487,6 @@ MonoBehaviour:
   explosionEffect: {fileID: 6899403939186223378}
   bikeData:
     name: Bike1
-    isUnlocked: 1
-    isSelected: 0
     price: 0
   physicsSettings:
     motorTorque: 200

@@ -2443,6 +2443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rolling Spike Wheel Trap
       objectReference: {fileID: 0}
+    - target: {fileID: 8330337264629342279, guid: e68c09a036ad6f843be6f3caed4cfcea, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9029103842993616009, guid: e68c09a036ad6f843be6f3caed4cfcea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.97
@@ -2626,6 +2630,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -730.8
       objectReference: {fileID: 0}
+    - target: {fileID: 2667099963901256348, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5207880850921324275, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1280
@@ -2666,6 +2674,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6751679536440217386, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070457518119987027, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}
+      propertyPath: nextLevelName
+      value: Level01
+      objectReference: {fileID: 0}
     - target: {fileID: 7070457518119987027, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}
       propertyPath: timeCounterText
       value: 
@@ -2675,7 +2691,8 @@ PrefabInstance:
       value: WinPointTemplate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9063374310186960846, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}

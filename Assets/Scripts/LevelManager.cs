@@ -14,6 +14,7 @@ public class LevelManager: MonoBehaviour
     private void Start()
     {
         InitializeButtons();
+        TimeScale(1f);
     }
     private void InitializeButtons()
     {

@@ -2385,6 +2385,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7070457518119987027, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}
+      propertyPath: nextLevelName
+      value: Level03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070457518119987027, guid: a6e1a2f5eab7aab47a06dd353f9cdba3, type: 3}
       propertyPath: timeCounterText
       value: 
       objectReference: {fileID: 1743134208}

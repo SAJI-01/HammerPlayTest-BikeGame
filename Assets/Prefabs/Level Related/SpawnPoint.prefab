@@ -45,6 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bikes:
-  - {fileID: 0}
-  - {fileID: 0}
-  instantiatedBike: {fileID: 0}
+  - {fileID: 5552613592875043335, guid: d03bd673312446e478e56a85f8d8f17d, type: 3}
+  - {fileID: 1079495948910247368, guid: cb5de507c66b009409807dd570cdf05c, type: 3}
