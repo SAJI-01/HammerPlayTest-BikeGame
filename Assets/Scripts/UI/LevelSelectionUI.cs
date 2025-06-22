@@ -44,9 +44,5 @@ public class LevelSelectionUI : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         } 
-        else 
-        {
-            Debug.LogError("Scene name is null or empty.");
-        }
     }
 }

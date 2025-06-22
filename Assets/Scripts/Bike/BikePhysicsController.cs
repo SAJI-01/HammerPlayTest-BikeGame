@@ -18,7 +18,7 @@ public class BikePhysicsController
         this.settings = settings;
     }
     
-    public void ApplyMotor(float motorInput, bool isGrounded)
+    public void HandleAcceleration(float motorInput, bool isGrounded)
     {
         if (motorInput > 0f && isGrounded)
         {
@@ -28,20 +28,20 @@ public class BikePhysicsController
         }
     }
     
-    public void ApplyBrakes(float brakeInput, bool isGrounded)
+    public void HandleBrakes(float brakeInput, bool isGrounded)
     {
         if (brakeInput <= 0f) return;
         
-        ApplyWheelBraking(brakeInput);
-        ApplyBodyBraking(brakeInput);
+        HandleWheelBraking(brakeInput);
+        HandleBodyBraking(brakeInput);
         
         if (isGrounded && bikeBody.linearVelocity.magnitude > 2f)
         {
-            ApplyRealisticBrakePhysics(brakeInput);
+            HandleBrakePhysics(brakeInput);
         }
     }
     
-    private void ApplyWheelBraking(float brakeInput)
+    private void HandleWheelBraking(float brakeInput)
     {
         float dampingFactor = brakeInput * 10f * Time.fixedDeltaTime;
         
@@ -55,18 +55,16 @@ public class BikePhysicsController
             backWheelJoint.useMotor = false;
     }
     
-    private void ApplyBodyBraking(float brakeInput)
+    private void HandleBodyBraking(float brakeInput)
     {
         Vector2 brakeForceVector = -bikeBody.linearVelocity.normalized * settings.brakeForce * brakeInput;
         bikeBody.AddForce(brakeForceVector);
     }
     
-    private void ApplyRealisticBrakePhysics(float brakeInput)
+    private void HandleBrakePhysics(float brakeInput)
     {
-        // Apply rotational torque (front dips, back lifts)
         bikeBody.AddTorque(-settings.wheelieTorque * brakeInput);
         
-        // Apply forces at specific positions
         Vector2 backPosition = bikeBody.transform.position + bikeBody.transform.right * -0.5f;
         Vector2 frontPosition = bikeBody.transform.position + bikeBody.transform.right * 0.5f;
         
@@ -74,7 +72,7 @@ public class BikePhysicsController
         bikeBody.AddForceAtPosition(Vector2.down * settings.wheelieForce * 0.5f * brakeInput, frontPosition);
     }
     
-    public void ApplyTilt(float steerInput, bool isGrounded)
+    public void HandleTilt(float steerInput, bool isGrounded)
     {
         if (Mathf.Abs(steerInput) <= 0f) return;
         
