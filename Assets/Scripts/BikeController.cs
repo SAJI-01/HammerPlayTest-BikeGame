@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public enum BikeState
 {
     Idle,
@@ -19,6 +23,8 @@ public struct BikeData
 [System.Serializable]
 public struct BikePhysicsSettings
 {
+
+    
     [Header("Motor Settings")]
     public float motorTorque;
     
@@ -76,8 +82,10 @@ public class BikeInputHandler
 
 public class BikeController : MonoBehaviour, IBikeController
 {
-    [Header("Bike Configuration")] [SerializeField]
-    private BikeData bikeData;
+    [Header("Bike Explosion")]
+    public ParticleSystem explosionEffect;
+    [Header("Bike Configuration")] 
+    [SerializeField] private BikeData bikeData;
 
     [SerializeField] private BikePhysicsSettings physicsSettings = BikePhysicsSettings.DefaultSettings;
 
@@ -102,6 +110,7 @@ public class BikeController : MonoBehaviour, IBikeController
     private void Awake()
     {
         InitializeComponents();
+        explosionEffect?.gameObject.SetActive( false);
     }
 
     private void InitializeComponents()
@@ -160,6 +169,26 @@ public class BikeController : MonoBehaviour, IBikeController
     public void SetInputs(float acceleration, float steering, float braking)
     {
         inputHandler.SetInputs(acceleration, steering, braking);
+    }
+    
+    public IEnumerator Explode()
+    {
+        explosionEffect?.gameObject.SetActive(true);
+        explosionEffect?.Play();
+        //disable bike input
+        inputHandler.SetInputs(0f, 0f, 0f);
+        //get wheel colliders and disable them
+        var wheelJoints = GetComponentsInChildren<WheelJoint2D>();
+        foreach (var wheeljoint2D in wheelJoints)
+        {
+            wheeljoint2D.enabled = false;
+        }
+        backWheel.transform.SetParent(null);
+        frontWheel.transform.SetParent(null);
+
+        
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnDrawGizmosSelected()

@@ -1,20 +1,16 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class CrashDetector : MonoBehaviour
 {
-    [SerializeField] private float angleThreshold = 80f;
-    [SerializeField] private ParticleSystem crashEffect;
-    [SerializeField] private GameObject frontWheel,backWheel;
-    
- 
-    void Update()
-    {
-        float zRot = transform.rotation.eulerAngles.z;
-        if (zRot > angleThreshold && zRot < 360 - angleThreshold)
+    private void OnTriggerEnter2D(Collider2D other)
+    {// get the layer of the object that collided with this object
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            // Trigger crash logic here
-            Debug.Log("Crash detected! Bike is upside down.");
-            
+            // If the object is a player or bike, trigger the explosion
+            StartCoroutine(transform.parent.GetComponent<BikeController>().Explode());
         }
+
     }
 }

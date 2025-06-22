@@ -56,14 +56,9 @@ public class SpikePressTrap : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player hit by spike press trap!");
-            RestartLevel();
+            StartCoroutine(other.GetComponent<BikeController>().Explode());
         }
     }
 
-    private void RestartLevel()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-        );
-    }
+
 }

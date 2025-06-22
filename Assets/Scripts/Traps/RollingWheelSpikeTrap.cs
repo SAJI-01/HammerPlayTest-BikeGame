@@ -14,12 +14,9 @@ using UnityEngine;
             if (other.CompareTag("Player"))
             {
                 Debug.Log("Player hit by rolling wheel spike trap!");
-                restartLevel();
+                StartCoroutine(other.GetComponent<BikeController>().Explode());
             }
         }
 
-        private void restartLevel()
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        }
+
     }

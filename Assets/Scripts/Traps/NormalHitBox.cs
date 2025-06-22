@@ -10,12 +10,7 @@ public class NormalHitBox : MonoBehaviour
         {
             // Apply damage or effects to the player
             Debug.Log("Player hit by spike trap!");
-            restartLevel();
+            StartCoroutine(other.GetComponent<BikeController>().Explode());
         }
-    }
-
-    private void restartLevel()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
